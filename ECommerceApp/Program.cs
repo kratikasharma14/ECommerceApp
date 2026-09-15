@@ -1,3 +1,4 @@
+using ECommerceApp;
 using ECommerceApp.Data;
 using ECommerceApp.Repositories;
 using ECommerceApp.Repositories.Interfaces;
@@ -35,6 +36,7 @@ builder.Services.AddScoped<IOrderService, OrderService>();
 
 // Azure Service Bus
 builder.Services.AddScoped<IServiceBusService, ServiceBusService>();
+builder.Services.AddSingleton<BlobService>();
 // JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
